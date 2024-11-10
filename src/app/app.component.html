@@ -1,0 +1,19 @@
+
+<div *ngIf="!isUserLoggedIn">
+<mat-toolbar color="primary" class="navbar">
+<span class="navbar-brand">Stack Exchange </span>
+<span class="spacer"></span>
+<button mat-button routerLink="/login" routerLinkActivate="active">Login</button>
+<button mat-button routerLink="/signup" routerLinkActivate="active">Signup</button>
+</mat-toolbar>
+</div>
+<div *ngIf="isUserLoggedIn">
+    <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">Stack Exchange </span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/user/dashboard" routerLinkActivate="active">Dashboard</button>
+    <button mat-button routerLink="/user/post-question" routerLinkActivate="active">Post Question</button>
+    <button mat-button  (click) ="logout()"routerLinkActivate="active">logout</button>
+    </mat-toolbar>
+    </div>
+<router-outlet></router-outlet>
